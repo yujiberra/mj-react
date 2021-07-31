@@ -1,7 +1,7 @@
 function importAll(r: __WebpackModuleApi.RequireContext) {
   let images = new Map<string, string>();
   r.keys().forEach((item, _index) =>
-    images.set(item.replace('./', '').replace('.gif', ''),r(item).default));
+    images.set(item.replace('./', '').replace('.png', ''),r(item).default));
   return images;
 }
 
