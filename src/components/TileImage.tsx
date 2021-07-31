@@ -8,6 +8,6 @@ function importAll(r: __WebpackModuleApi.RequireContext) {
 const images = importAll(require.context('./images', false, /\.(gif|png|jpe?g|svg)$/));
 
 const TileImage = ({ tile }: { tile: string }) =>
-  <img src={images.get(tile)} alt="{tile}"></img>
+  <img src={images.get(tile)} alt={tile}></img>
 
 export default TileImage;
