@@ -1,3 +1,4 @@
+import './App.css'
 import ClickableTile from './components/ClickableTile';
 import TileImage from './components/TileImage';
 
