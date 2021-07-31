@@ -1,7 +1,8 @@
 {
   "name": "mj-react",
   "version": "0.1.0",
-  "private": false,
+  "description": "React components for riichi mahjong",
+  "private": true,
   "main": "dist/index.js",
   "files": [
     "dist",
