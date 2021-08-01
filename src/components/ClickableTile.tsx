@@ -3,7 +3,7 @@ import './ClickableTile.css'
 
 interface ClickableTileProps {
   tile: string;
-  onClick: ((tile: string) => void);
+  onClick: (tile: string) => void;
 }
 
 const ClickableTile = ({ tile, onClick }: ClickableTileProps) =>

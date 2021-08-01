@@ -3,7 +3,7 @@ import ClickableTile from './ClickableTile';
 import './TilePalette.css'
 
 interface TilePaletteProps {
-  onSelectTile: ((tile: string) => void);
+  onSelectTile: (tile: string) => void;
 }
 
 const TilePalette = ({ onSelectTile }: TilePaletteProps) => {
