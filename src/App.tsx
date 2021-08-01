@@ -1,5 +1,7 @@
+import { parse } from 'eshanten';
 import './App.css'
 import ClickableTile from './components/ClickableTile';
+import HandTiles from './components/HandTiles';
 import TileImage from './components/TileImage';
 import TilePalette from './components/TilePalette';
 
@@ -18,6 +20,8 @@ function App() {
         <ClickableTile tile="1z" onClick={logTile}></ClickableTile>
         <h3>Tile palette</h3>
         <TilePalette onSelectTile={logTile}></TilePalette>
+        <h3>Hand Tiles</h3>
+        <HandTiles tiles={parse("123m4r56s456p111z2z")} tileClicked={logTile}/>
     </div>
   );
 }
