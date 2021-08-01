@@ -3,29 +3,29 @@ import HandTiles from "./HandTiles";
 import TilePalette from "./TilePalette";
 
 interface HandEditorProps {
-  tiles: string[];
-  tilesChanged: (tiles: string[]) => void;
+  hand: string;
+  handChanged: (tiles: string) => void;
 }
 
-const HandEditor = ({ tiles, tilesChanged}: HandEditorProps) => {
+const HandEditor = ({ hand, handChanged}: HandEditorProps) => {
   const handleInputChange = (e: React.FormEvent<HTMLInputElement>) =>
-    tilesChanged(parse(e.currentTarget.value));
+    handChanged(e.currentTarget.value);
 
   const removeTile = (tile: string) => {
-    const newTiles = [...tiles];
-    newTiles.splice(tiles.findIndex(t => t === tile), 1)
-    tilesChanged(newTiles);
+    const tiles = parse(hand)
+    tiles.splice(tiles.findIndex(t => t === tile), 1)
+    handChanged(stringify(tiles));
   }
 
   const addTile = (tile: string) => {
-    const newTiles = [...tiles, tile];
-    if (validate(newTiles)) tilesChanged(newTiles);
+    const newTiles = [...parse(hand), tile];
+    if (validate(newTiles)) handChanged(stringify(newTiles));
   }
 
   return (
     <div>
-      <HandTiles tiles={tiles} tileClicked={removeTile}/>
-      <input value={stringify(tiles)} onChange={handleInputChange} />
+      <HandTiles tiles={parse(hand)} tileClicked={removeTile}/>
+      <input value={hand} onChange={handleInputChange} />
       <TilePalette onSelectTile={addTile}/>
     </div>
   );

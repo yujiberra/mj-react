@@ -11,7 +11,7 @@ const logTile = (tile: string) =>
   console.log(tile);
 
 function App() {
-  const [hand, setHand] = React.useState(parse("123m4r56s456p111z2z"));
+  const [hand, setHand] = React.useState("123m4r56s456p東東東中");
 
   return (
     <div className="App">
@@ -27,7 +27,7 @@ function App() {
         <h3>Hand Tiles</h3>
         <HandTiles tiles={parse("123m4r56s456p111z2z")} tileClicked={logTile}/>
         <h3>Hand Editor</h3>
-        <HandEditor tiles={hand} tilesChanged={setHand}/>
+        <HandEditor hand={hand} handChanged={setHand}/>
     </div>
   );
 }
