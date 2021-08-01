@@ -1,6 +1,8 @@
 import { parse } from 'eshanten';
+import React from 'react';
 import './App.css'
 import ClickableTile from './components/ClickableTile';
+import HandEditor from './components/HandEditor';
 import HandTiles from './components/HandTiles';
 import TileImage from './components/TileImage';
 import TilePalette from './components/TilePalette';
@@ -9,6 +11,8 @@ const logTile = (tile: string) =>
   console.log(tile);
 
 function App() {
+  const [hand, setHand] = React.useState(parse("123m4r56s456p111z2z"));
+
   return (
     <div className="App">
         <h2>mj-react example</h2>
@@ -22,6 +26,8 @@ function App() {
         <TilePalette onSelectTile={logTile}></TilePalette>
         <h3>Hand Tiles</h3>
         <HandTiles tiles={parse("123m4r56s456p111z2z")} tileClicked={logTile}/>
+        <h3>Hand Editor</h3>
+        <HandEditor tiles={hand} tilesChanged={setHand}/>
     </div>
   );
 }
